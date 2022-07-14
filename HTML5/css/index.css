@@ -384,21 +384,67 @@ body {
   background-size: 14px 14px, 100%;
 }
 
-/* 웹 관련 마크업 */
-.markup {
-  background: #aaa linear-gradient(to bottom, #ccc, #aaa) repeat;
+/* 웹 관련 용어 */
+.term {
+  background: linear-gradient(to bottom, #ccc, #fff);
   border-radius: 5px;
   margin-top: 20px;
+  border: 1px solid #000;
   padding: 15px;
 }
 
-.markup h2 {
-  font-size: 15px;
-  font-weight: 400px;
+.term-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.term-list {
+  margin-top: 15px;
 }
 
-.markup img {
+.term-list div {
+  display: flow-root;
+  margin-top: 10px;
+}
+
+.even .term-list-subject,
+.even .term-list-breif {
   float: left;
+}
+
+.even .term-list-thumbnail {
+  float: right;
+}
+
+.odd .term-list-subject,
+.odd .term-list-breif {
+  float: right;
+}
+
+.odd .term-list-thumbnail {
+  float: left;
+}
+
+.term-list-subject {
+  font-size: 15px;
+  font-weight: 500;
+  width: 145px;
+  float: right;
+  color: #296867;
+}
+
+.term-list-thumbnail {
+  position: relative;
+  top: 2px;
+}
+
+.term-list-thumbnail img {
+  vertical-align: top;
+}
+
+.term-list-breif {
+  width: 145px;
+  margin-top: 5px;
+  line-height: 1.5;
 }
 
 /* 슬로건 */
