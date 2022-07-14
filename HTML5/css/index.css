@@ -276,49 +276,87 @@ body {
 
 /* 로그인 */
 .login {
-  background-color: orange;
-  padding: 15px;
+  padding: 10px;
+  background: #ed552f radial-gradient(circle at right top, #edad2d, #ed552f);
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #aaa;
 }
 
-.login h2 {
-  font-size: 15px;
+.login-title {
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ff0;
+  text-indent: 10px;
 }
 
 .login-form {
   background: #fff;
-  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 10px 0 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.login-form fieldset {
   position: relative;
-  padding: 10px;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 10px;
 }
 
-fieldset input {
-  width: 80px;
+.user-email {
+  margin-bottom: 5px;
 }
 
-.user-email input {
-  position: absolute;
-  right: 70px;
+.login-form label {
+  width: 56px;
+  display: inline-block;
 }
 
-.user-pwd input {
-  position: absolute;
-  right: 70px;
-  top: 30px;
-  margin-top: 5px;
+.login-form input {
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 2px 2px 2px 0.5em;
 }
 
 .login-button {
-  background: orangered;
-  border: 0;
-  color: #fff;
-  border-radius: 4px;
-  width: 50px;
-  height: 50px;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 53px;
+  padding: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #ed552f;
+  border: 0;
+  border-radius: 4px;
+}
+
+.sign {
+  background: #fff;
+  padding: 0 10px 4px 4px;
+  border-radius: 0 0 5px 5px;
+  display: flow-root;
+}
+
+.sign li:first-child {
+  float: left;
+}
+
+.sign li:last-child {
+  float: right;
+}
+
+.sign a {
+  display: block;
+  padding: 6px 0;
+  font-size: 1.3rem;
+  letter-spacing: -1px;
+  /* line-height: 1.4; */
+}
+.sign .icon-right-open::before {
+  color: #ed552f;
 }
 
 /* 슬로건 */
