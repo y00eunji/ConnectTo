@@ -488,6 +488,45 @@ body {
   border-radius: 4px;
 }
 
+/* 공시사항 및 자료실 */
+.board {
+  margin-top: 20px;
+  background: yellow;
+  position: relative;
+}
+
+.is-select {
+}
+
+.board-tab {
+}
+
+.board-panel {
+  margin-top: 10px;
+}
+
+.board-panel li {
+  margin-top: 5px;
+}
+
+time {
+  position: absolute;
+  right: 0;
+}
+
+.notice {
+  background: yellow;
+}
+
+.archive {
+}
+
+.more {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /* 슬로건 */
 .slogan {
   background: lime;
