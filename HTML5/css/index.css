@@ -465,7 +465,7 @@ body {
 .search-form input {
   border: 1px solid #aaa;
   height: 24px;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 4px 4px;
   padding: 2px 2px 2px 0.5em;
   /* flex-grow: 1; */
   width: 100%;
