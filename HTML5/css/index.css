@@ -489,7 +489,7 @@ body {
 }
 
 /* 공시사항 및 자료실 */
-.board {
+/* .board {
   margin-top: 20px;
   position: relative;
   padding-top: 45px;
@@ -559,7 +559,9 @@ body {
 
 .board-section.is-select .board-more {
   display: block !important;
-}
+} */
+
+/* WAI-ARIA 고려한 CSS 디자인 */
 
 /* 슬로건 */
 .slogan {
