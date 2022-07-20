@@ -60,8 +60,9 @@ body {
 
 .skip-nav span {
   display: inline-block;
-  padding: 0;
+  padding: 8px;
   border: 2px solid #00f;
+  border-radius: 4px;
 }
 
 .skip-nav:focus span {
