@@ -91,9 +91,13 @@ input[type="search"] {
   border: 1px solid currentColor;
 }
 
-/* 공통 네비게이션 */
-.appNavigation {
-  display: flex;
+/* 공통 메인메뉴 */
+
+.menu__link {
+  display: block;
+  padding: var(--spacing-xs);
+  font-size: var(--text-md);
+  font-weight: 700;
 }
 
 /* 모바일 디바이스 (Mobile Device) */
@@ -179,20 +183,26 @@ input[type="search"] {
     transform: rotate(-45deg);
   }
 
-  /* 모바일 네비게이션 */
-  .appNavigation.is--active .menu__list {
-    background-color: var(--accent-opacity-color);
-    position: absolute;
+  /* 모바일 메인 메뉴 */
+  .menu {
+    background: var(--accent-opacity-color);
+    position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 70%;
     height: 100vh;
-    padding: 50px;
+    backdrop-filter: blur(4px);
+    padding: var(--spacing-md);
+    transform: translateX(-150%);
+    transition: all 300ms;
   }
 
-  .appNavigation.is--active .menu__list li {
-    margin-bottom: 20px;
-    font-weight: 700;
+  .menu__item {
+    border-bottom: 1px solid var(--silver);
+  }
+
+  .menu.is--active {
+    transform: none;
   }
 }
 
@@ -226,12 +236,26 @@ input[type="search"] {
     display: none;
   }
 
-  /* 데스크탑 네비게이션 */
-  .appNavigation {
-    width: 100vw;
-    background: brown;
+  /* 데스크탑 메인메뉴 */
+  .menu {
+    background: var(--secondary-color);
+    padding: var(--spacing-base) var(--spacing-md);
+  }
+
+  .menu__list {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+  }
+
+  .menu__link {
+    color: var(--white);
+    text-shadow: 1px 1px 0 var(--black), 1px -1px 0 var(--black);
   }
 }
 
