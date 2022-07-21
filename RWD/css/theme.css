@@ -16,7 +16,7 @@
   --accent-book: var(--green);
   --accent-news: var(--yellow);
   --accent-board: var(--brown);
-  --accent-favorite: var(--orange);
+  --accent-board: var(--orange);
   --accent-twitter: var(--blue);
 
   --spacing-xs: 0.5rem; /* 8px */
