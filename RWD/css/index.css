@@ -228,7 +228,6 @@ input[type="search"] {
 /* 공통 게시판 */
 .board {
   position: relative;
-  margin: 50px 0;
 }
 
 .board__item {
@@ -261,7 +260,28 @@ input[type="search"] {
 /* 공통 인기사이트 */
 .favorite__item {
   margin-top: var(--spacing-xs);
-  background: pink;
+}
+
+/* 공통 트위터 */
+.twitter {
+  margin-top: var(--spacing-xs);
+}
+
+.twitter__userName {
+  display: inline-block;
+}
+
+.twitter__userId {
+  display: inline-block;
+}
+
+.twitter__userProfile {
+  float: right;
+  margin-left: 10px;
+  border-radius: 70%;
+  overflow: hidden;
+  -webkit-shape-outside: circle();
+  shape-outside: circle();
 }
 
 /* 모바일 디바이스 (Mobile Device) */
