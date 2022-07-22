@@ -365,11 +365,12 @@ input[type="search"] {
     transform: none;
   }
 
-  /* 모바일 게시판 */
-  .board__item {
-  }
-
-  .board__date {
+  /* 모바일 인기 사이트 */
+  .favorite__link::after {
+    content: attr(data-tooltip);
+    margin-left: var(--spacing-xs);
+    color: var(--accent-favorite);
+    font-size: var(--text-sm);
   }
 }
 
