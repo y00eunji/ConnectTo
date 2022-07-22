@@ -292,6 +292,17 @@ input[type="search"] {
   margin-top: var(--spacing-xs);
 }
 
+/* 공통 푸터 */
+.appFooter {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.address {
+  margin-bottom: var(--spacing-base);
+}
+
 /* 모바일 디바이스 (Mobile Device) */
 @media (min-width: 320px) and (max-width: 767px) {
   /* 모바일 헤더 */
@@ -400,6 +411,48 @@ input[type="search"] {
     color: var(--accent-favorite);
     font-size: var(--text-sm);
   }
+
+  /* 모바일 메인 콘텐츠 */
+  .appMain {
+    background: yellow;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: var(--spacing-base);
+  }
+
+  .book,
+  .news,
+  .board,
+  .favorite,
+  .twitter {
+    width: 100%;
+  }
+
+  /* 모바일 푸터 */
+  .address {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+
+/* 모바일 (미디엄사이즈) (640px 이상) */
+@media (min-width: 640px) and (max-width: 767px) {
+  /* 모바일 (MD) 메인 콘텐츠 */
+  .book {
+    order: 1;
+  }
+
+  .news {
+    order: -1;
+  }
+
+  .book,
+  .board,
+  .favorite,
+  .twitter {
+    width: 48%;
+  }
 }
 
 /* 데스크탑 디바이스 (Desktop Device) */
@@ -465,6 +518,43 @@ input[type="search"] {
   .twitter__userProfile {
     width: 100px;
     height: 100px;
+  }
+
+  /* 데스크탑 메인콘텐츠 */
+  .appMain {
+    background: skyblue;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "news news news news news news news news news news news news"
+      "book book book book favorite favorite favorite twitter twitter twitter twitter twitter"
+      "book book book book . board board board board board board board";
+    gap: var(--spacing-base);
+  }
+
+  .book {
+    grid-area: book;
+  }
+
+  .news {
+    grid-area: news;
+  }
+
+  .board {
+    grid-area: board;
+  }
+  .favorite {
+    grid-area: favorite;
+  }
+
+  .twitter {
+    grid-area: twitter;
+  }
+
+  /* 데스크탑 푸터 */
+  .appFooter {
+    text-align: center;
   }
 }
 
