@@ -1,14 +1,89 @@
 // media-query.scss
-$break: 768px;
+@use "sass:map";
 
-@mixin mobile {
-  @media (max-width: ($break - 1)) {
-    @content;
+// Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+//변수가 가진 값을 빼는 것, 사용하기 전까지 동작하지 않음
+@function errorMessage($breakpoint-name) {
+  @return "#{$breakpoint-name} : 중단점이 유효하지 않습니다.";
+}
+
+@mixin respond-from($breakpoint) {
+  //가지고 오기
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+
+    //(min-width: 567px)와 동일함
+    @media (min-width: $breakpoint-value) {
+      //콘텐츠로 출력
+      @content;
+    }
+  } @else {
+    //에러 처리
+    @error errorMessage($breakpoint);
   }
 }
 
-@mixin desktop {
-  @media (min-width: $break) {
-    @content;
+@mixin respond-until($breakpoint) {
+  //가지고 오기
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+
+    //(min-width: 567px)와 동일함
+    @media (max-width: ($breakpoint-value - 1)) {
+      //콘텐츠로 출력
+      @content;
+    }
+  } @else {
+    //에러 처리
+    @error errorMessage($breakpoint);
+  }
+}
+
+@mixin respond-range($from, $until) {
+  //map.has-key($breakpoints, $from) => breakpoints에 from이 있는지 찾기
+  @if map.has-key($breakpoints, $from) and map.has-key($breakpoints, $until) {
+    $from-value: map.get($breakpoints, $from);
+    $until-value: map.get($breakpoints, $until);
+
+    @media (min-width: $from-value) and (max-width: ($until-value - 1)) {
+      @content;
+    }
+  } @else {
+    @if (map.has-key($breakpoints, $from) == false) {
+      @error errorMessage($from);
+    }
+
+    @if (map.has-key($breakpoints, $until) == false) {
+      @error errorMessage($until);
+    }
+  }
+}
+// 미디어 쿼리 중단점 (Breakpoints) --------------------------------------------------------------- /
+
+$break: 768px;
+
+@mixin media($media) {
+  @if $media == "mobile" {
+    @media (max-width: ($break - 1)) {
+      @content;
+    }
+  }
+
+  @if $media == "desktop" {
+    @media (min-width: $break) {
+      @content;
+    }
+  }
+
+  @if $media != "mobile" and $media != "desktop" {
+    @error "미디어 유형이 유효하지 않습니다";
   }
 }

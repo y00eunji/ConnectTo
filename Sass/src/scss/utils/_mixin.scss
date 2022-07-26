@@ -1,1 +1,73 @@
 // mixin.scss
+@use "./unit" as *;
+@use "./variable" as *;
+//auto margin 관련된 것-----------------------------------------------------------------
+//1. margin 가운데 정렬
+// @mixin autoMargin($marginX: auto) {
+//   margin-left: $marginX;
+//   margin-right: $marginX;
+// }
+@mixin autoMargin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//2. 상하좌우 같은 margin을 주고 싶을 때
+@mixin marginX($marginX: 0) {
+  margin-left: rem($marginX);
+  margin-right: rem($marginX);
+}
+
+@mixin marginY($marginY: 0) {
+  margin-top: rem($marginY);
+  margin-bottom: rem($marginY);
+}
+
+// padding 관련 믹스인
+@mixin paddingY($paddingY: 0) {
+  padding-top: rem($paddingY);
+  padding-bottom: rem($paddingY);
+}
+
+@mixin paddingX($paddingX: 0) {
+  padding-left: rem($paddingX);
+  padding-right: rem($paddingX);
+}
+
+// Position 관련 믹스인
+// @mixin pos($pos: absolute, $t: initial, $r: initial, $b: initial, $l: initial) {
+//   position: $pos;
+//   top: $t;
+//   right: $r;
+//   bottom: $b;
+//   left: $l;
+// }
+
+//center로 움직이는 mixin
+//x축, y축, 전체에서 center로 움직이는 mixin
+//순서가 같지 않으면 $pos : $pos로 명시 해줘야하지만 현재 @include안에 $pos가 첫번째 인자이다 보니 생략한 것임
+@mixin posCenterX($pos: absolute) {
+  // @include pos($pos, $l: 50%);
+  position: $pos;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin posCenterY($pos: absolute) {
+  // @include pos($pos, $t: 50%);
+  position: $pos;
+  right: 50%;
+  transform: translateY(-50%);
+}
+@mixin posCenter($pos: absolute) {
+  // @include pos($pos);
+  position: $pos;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 박스의 최대 너비를 설정하기 위한 믹스인
+@mixin boxSizeMax($max: $container-width) {
+  max-width: $max;
+  @include autoMargin;
+}

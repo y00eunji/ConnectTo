@@ -3,13 +3,5 @@
 @use "./utils" as *;
 
 .appFooter {
-  @include mobile {
-    //여기부터가 @content 영역
-    background: yellow;
-  }
-
-  @include desktop {
-    //여기부터가 @content 영역
-    background: skyblue;
-  }
+  @include boxSizeMax;
 }
