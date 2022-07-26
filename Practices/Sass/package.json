@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "run-p serve watch",
-    "sass": "sass src/scss/index.scss src/css/index.css",
+    "sass": "sass src/scss:src/css",
     "nosource": "npm run sass -- --no-source-map",
     "watch": "npm run sass -- --watch",
     "serve": "live-server ./src"
