@@ -573,52 +573,56 @@ iframe {
   margin-left: 1rem;
 }
 
-.menu {
-  background: pink;
-}
-.menu.is-active .menu__list {
+.menu.is--active {
   transform: none;
+}
+@media (max-width: 767px) {
+  .menu {
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 70%;
+    height: 100vh;
+    background: rgba(171, 211, 117, 0.85);
+    backdrop-filter: blur(4px);
+    transform: translateX(-120%);
+  }
 }
 @media (min-width: 768px) {
   .menu {
     background: #988574;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
-    margin-right: initial;
   }
 }
-@media (max-width: 767px) {
-  .menu__list {
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-    background: yellow;
-  }
+.menu__list {
+  padding: 1rem 1.5rem;
 }
 @media (min-width: 768px) {
   .menu__list {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: stretch;
     flex-wrap: nowrap;
   }
 }
-@media (min-width: 768px) {
-  .menu__item {
-    margin-top: 1.875rem;
-    margin-bottom: 1.875rem;
-  }
+.menu__item {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.menu__link {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 @media (min-width: 768px) {
   .menu__link {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     color: #fff;
-    font-weight: 700;
-    text-shadow: 1px 1px 0 #767676, -1px -1px 0 #767676;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
   }
 }
 

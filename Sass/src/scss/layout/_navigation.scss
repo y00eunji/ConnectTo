@@ -1,47 +1,45 @@
 @use "./../utils" as *;
 
 .menu {
-  background: pink;
-
-  &.is-active .menu__list {
+  &.is--active {
     transform: none;
+  }
+
+  @include mobile {
+    @include posLeft(0, 0, fixed);
+    width: 70%;
+    height: 100vh;
+    background: rgba($green, 0.85);
+    backdrop-filter: blur(4px);
+    transform: translateX(-120%);
   }
 
   @include desktop {
     background: $secondary-color;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
-    margin-right: initial;
   }
 
-  //메뉴 리스트
   &__list {
-    @include mobile {
-      @include posLeft($t: 0, $l: 0, $pos: absolute);
-      background: yellow;
-    }
+    padding: rem(16px) rem(24px);
 
     @include desktop {
-      @include flexbox($j: space-around);
+      @include boxSizeMax;
+      @include flexbox($j: space-between);
     }
   }
 
-  //메뉴 아이템
   &__item {
-    @include desktop {
-      @include marginY(30px);
-    }
+    @include marginY(16px);
   }
 
-  //메뉴 링크
   &__link {
+    display: block;
+    font-size: rem(18px);
+    font-weight: 700;
+    @include paddingY(8px);
+
     @include desktop {
-      @include paddingY(16px);
       color: $white;
-      font-weight: 700;
-      text-shadow: 1px 1px 0 $silver, -1px -1px 0 $silver;
+      text-shadow: 1px 1px 0 $black, -1px -1px 0 $black;
     }
   }
 }
