@@ -1,1 +1,46 @@
-// home.scss
+@use "./../utils" as *;
+
+[class*="__title"] {
+  @include flexbox(column, center);
+  @include textHeading(18px);
+}
+
+[class*="__summary"] {
+  @include textStyle(14px);
+}
+.home {
+  padding: rem(16px) rem(24px);
+
+  [class*="__title"] {
+    margin-bottom: rem(16px);
+  }
+
+  @include mobile {
+    @include flexbox(column);
+    gap: rem(16px);
+  }
+
+  @include desktop {
+    @include boxSizeMax;
+    @include gridbox;
+    grid-template-areas:
+      "news news news news news news news news news news news news"
+      "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
+      "book book book book . board board board board board board board";
+    .book {
+      grid-area: book;
+    }
+    .news {
+      grid-area: news;
+    }
+    .board {
+      grid-area: board;
+    }
+    .favorite {
+      grid-area: favorite;
+    }
+    .twitter {
+      grid-area: twitter;
+    }
+  }
+}
