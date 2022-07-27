@@ -45,6 +45,14 @@
 //   left: $l;
 // }
 
+@mixin pos($pos: absolute, $t: initial, $r: initial, $b: initial, $l: initial) {
+  position: $pos;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+
 //center로 움직이는 mixin
 //x축, y축, 전체에서 center로 움직이는 mixin
 //순서가 같지 않으면 $pos : $pos로 명시 해줘야하지만 현재 @include안에 $pos가 첫번째 인자이다 보니 생략한 것임
