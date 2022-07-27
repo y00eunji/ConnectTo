@@ -413,15 +413,59 @@ iframe {
 }
 
 .button {
-  border: 0;
   padding: 0.25rem 1rem;
   border-radius: 0.25rem;
   height: 2rem;
   font-size: 0.875rem;
 }
+.button--none {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
 .button--fill {
   background: #988574;
   color: #fff;
+}
+
+.buttonWrapper {
+  overflow: hidden;
+}
+
+.button--burger {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+}
+.button--burgerBarTop, .button--burgerBarMiddle, .button--burgerBarBottom {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 100%;
+  height: 20%;
+  background: #fff;
+  border-radius: 0.5rem;
+  transition: all 350ms;
+}
+.button--burgerBarMiddle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.button--burgerBarBottom {
+  top: 100%;
+  transform: translateY(-100%);
+}
+.is--active .button--burgerBarTop {
+  top: 50%;
+  transform: translate(0%, -50%) rotate(45deg);
+}
+.is--active .button--burgerBarMiddle {
+  top: 50%;
+  transform: translate(-120%, -50%) rotate(0deg);
+}
+.is--active .button--burgerBarBottom {
+  top: 50%;
+  transform: translate(0%, -50%) rotate(-45deg);
 }
 
 .appHeader {
@@ -448,6 +492,19 @@ iframe {
     margin-left: auto;
     margin-right: auto;
     background: yellow;
+  }
+}
+@media (max-width: 767px) {
+  .appHeader .buttonWrapper {
+    position: absolute;
+    top: 3.25rem;
+    right: 1.25rem;
+    padding: 0.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .appHeader .buttonWrapper {
+    display: none;
   }
 }
 

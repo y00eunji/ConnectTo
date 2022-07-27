@@ -1,14 +1,61 @@
 @use "./../utils" as *;
 
 .button {
-  border: 0;
   padding: rem(4px) rem(16px);
   border-radius: rem(4px);
   height: rem(32px);
   font-size: rem(14px);
 
+  &--none {
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+
   &--fill {
     background: $secondary-color;
     color: $white;
+  }
+}
+
+.buttonWrapper {
+  overflow: hidden;
+}
+
+.button--burger {
+  width: rem(32px);
+  height: rem(32px);
+  position: relative;
+
+  &BarTop,
+  &BarMiddle,
+  &BarBottom {
+    @include posLeft(0, 0);
+    width: 100%;
+    height: 20%;
+    background: $white;
+    border-radius: rem(8px);
+    transition: all 350ms;
+  }
+
+  &BarMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &BarBottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+
+  .is--active &BarTop {
+    @include transRotate(0%, -50%, 45);
+  }
+
+  .is--active &BarMiddle {
+    @include transRotate(-120%);
+  }
+
+  .is--active &BarBottom {
+    @include transRotate(0%, -50%, -45);
   }
 }

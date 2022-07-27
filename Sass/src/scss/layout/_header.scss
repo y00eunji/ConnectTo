@@ -16,6 +16,17 @@
     @include boxSizeMax;
     background: yellow;
   }
+
+  .buttonWrapper {
+    @include mobile {
+      @include posRight(52px, 20px);
+      padding: rem(4px);
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
 }
 
 // 로고
