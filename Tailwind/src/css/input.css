@@ -7,6 +7,16 @@ body {
   font-size: 14px;
 }
 
+/* 체크박스를 다시 체크할 수 있지 못해서 따로 빼줘야 함  */
 .auto-login:checked + label {
   @apply pl-6 bg-left bg-no-repeat bg-checkbox-checked;
+}
+
+/* 수업 */
+.input {
+  @apply w-full border rounded-md border-gray5 p-4 outline-none dark:text-black;
+}
+
+.input:focus {
+  @apply border-black dark:border-primary;
 }
